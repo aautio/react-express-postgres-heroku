@@ -33,6 +33,7 @@ The CRA is proxying requests to API server. Check the `proxy` config from `react
 1. `heroku create name-for-your-app`
 2. `heroku addons:create heroku-postgresql:hobby-dev`
 3. `heroku git:remote name-for-your-app`
+4. `git push heroku master`
 
 Now you have the software running in `https://name-for-your-app.herokuapps.com/`. It is running in production mode. Open your browser and check the logs with `heroku logs`.
 
