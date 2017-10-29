@@ -1,0 +1,21 @@
+{
+  "name": "api-with-express-and-postgres",
+  "version": "1.0.0",
+  "private": true,
+  "description": "API backend with Express and Postgres",
+  "scripts": {
+    "start": "nodemon server.js"
+  },
+  "dependencies": {
+    "dotenv": "^4.0.0",
+    "express": "^4.16.2",
+    "morgan": "^1.9.0",
+    "pg": "^7.3.0",
+    "pg-monitor": "^0.8.3",
+    "pg-promise": "^7.0.3",
+    "postgrator": "^2.10.3"
+  },
+  "devDependencies": {
+    "nodemon": "^1.12.1"
+  }
+}
