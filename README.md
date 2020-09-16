@@ -1,7 +1,3 @@
-A boilerplate for React with Express API and Postgres backends for easy development and Heroku deployments.
-
-You can see the boilerplate in action at https://react-express-postgres.herokuapp.com/
-
 ## What is included
 
 - NPM scripts for local development and [Heroku](https://devcenter.heroku.com/categories/nodejs) deployments 
