@@ -21,6 +21,12 @@ git clone <COPIED LINK>
 
 ### Step 4: Setup the codebase locally
 - Open up Terminal in Visual Studio Code by selecting the *Terminal* option located at the top.
+- Make sure you have node and npm installed. If you do not know if node or npm is installed, type in the following command:
+```shell
+node --version
+```
+*Note:* If you see red errors, you may need to install node and npm. [Install node and npm  here](https://www.npmjs.com/get-npm)
+
 - Run the following commands in the Visual Studio Code terminal:
 
 <ins>Option 1</ins>
