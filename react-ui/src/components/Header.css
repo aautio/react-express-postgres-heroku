@@ -1,0 +1,12 @@
+.App-logo {
+    animation: App-logo-spin infinite 20s linear;
+    height: 80px;
+  }
+  
+  .App-banner {
+    background-color: #222;
+    height: 150px;
+    padding: 40px;
+    color: white;
+  }
+  

@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
-import logo from './logo.svg'
+// import logo from './logo.svg'
 import './App.css'
+import Header from "./components/Header"
+import Title from "./components/Title"
 
 class App extends Component {
   state = {
@@ -37,10 +39,12 @@ class App extends Component {
 
     return (
       <div className="App">
-        <header className="App-header">
+        <Title name="I am a Title"/>
+        <Header name = "Title inside banner"/>
+        {/* <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">Welcome to React</h1>
-        </header>
+        </header> */}
 
         <p className="App-intro">{hello}</p>
         <p className="App-intro">{postgres}</p>
