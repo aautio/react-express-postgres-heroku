@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-// import logo from './logo.svg'
 import './App.css'
 import Header from "./components/Header"
 import Title from "./components/Title"
@@ -41,11 +40,6 @@ class App extends Component {
       <div className="App">
         <Title name="I am a Title"/>
         <Header name = "Title inside banner"/>
-        {/* <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header> */}
-
         <p className="App-intro">{hello}</p>
         <p className="App-intro">{postgres}</p>
         <p className="App-intro">{error}</p>
