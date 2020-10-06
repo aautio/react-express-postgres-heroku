@@ -70,10 +70,10 @@ if (process.env.NODE_ENV === 'production') {
  * Migrate database before listening for requests
  */
 const postgrator = require('postgrator')
-const { connectionString } = require('./lib/database')
+const { connectionString } = require('./lib/connection')
 
 postgrator.setConfig({
-  migrationDirectory: __dirname + '/db',
+  migrationDirectory: __dirname + '/migrations',
   driver: 'pg',
   connectionString
 })
