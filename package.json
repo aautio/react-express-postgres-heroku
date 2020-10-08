@@ -1,28 +1,19 @@
 {
-  "name": "react-express-postgres-heroku",
+  "name": "connect-me-full-repo",
   "version": "1.0.0",
   "engines": {
     "node": "8.x.x",
     "npm": "5.x.x"
   },
   "private": true,
-  "description": "Create React App with Express API and Postgres in Heroku",
+  "description": "ConnectMe provides a quick and confidential method for students to book appointments with their school's service workers",
   "scripts": {
-    "postinstall": "npm --prefix react-ui install && npm --prefix server install",
-    "start:dev": "concurrently 'npm run --prefix react-ui start' 'npm run --prefix server start'",
+    "postinstall": "cd server && npm install && cd .. && cd react-ui && npm install",
+    "start:dev": "start npm run --prefix server start && start npm run --prefix react-ui start",
     "heroku-postbuild": "npm run --prefix react-ui build",
     "start": "cd server && NODE_ENV=production node server.js"
   },
   "author": "Amy Tai",
   "license": "",
-  "devDependencies": {
-    "concurrently": "^3.6.1"
-  },
-  "cacheDirectories": [
-    "node_modules",
-    "react-ui/node_modules",
-    "server/node_modules"
-  ],
-  "dependencies": {
-  }
+  "dependencies": {}
 }

@@ -1,1 +1,26 @@
+# dependencies
 node_modules
+react-ui/node_modules
+server/node_modules
+
+# testing
+/react-ui/coverage
+/server/coverage
+
+# production
+/react-ui/build
+
+# environment variables
+react-ui/.DS_Store
+react-ui/.env.local
+react-ui/.env.development.local
+react-ui/.env.test.local
+react-ui/.env.production.local
+
+server/config
+server/.jest
+
+# misc
+react-ui/npm-debug.log*
+react-ui/yarn-debug.log*
+react-ui/yarn-error.log*
