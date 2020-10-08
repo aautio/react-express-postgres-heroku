@@ -1,12 +1,14 @@
-const pgpOptions = {}
+const config = require('../config/secrets.json');
 
-const pgp = require('pg-promise')(pgpOptions)
-const monitor = require('pg-monitor')
+const pgpOptions = {};
 
-monitor.attach(pgpOptions)
+const pgp = require('pg-promise')(pgpOptions);
+const monitor = require('pg-monitor');
 
-const connectionString = process.env.DATABASE_URL
+monitor.attach(pgpOptions);
 
-const db = pgp(connectionString)
+const connectionString = config["DATABASE_URL"];
+
+const db = pgp(connectionString);
 
 module.exports = { db, connectionString }

@@ -3,7 +3,7 @@ require('dotenv').config()
 const express = require('express')
 const morgan = require('morgan')
 
-const api = require('./api')
+const api = require('./routes')
 
 const app = express()
 
@@ -46,7 +46,7 @@ if (process.env.DYNO) {
 }
 
 /*
- * Hook up all apis defined in /api
+ * Connect all routes in the api.
  */
 app.use(api)
 
