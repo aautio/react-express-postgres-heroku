@@ -8,7 +8,6 @@ import {
   Route,
   Redirect
 } from "react-router-dom";
-import ProtectedRoute from "./components/Layouts/ProtectedRoute"
 
 
 class App extends Component {
@@ -42,24 +41,28 @@ class App extends Component {
       })
   }
   render() {
-    const { hello, postgres, error } = this.state
+    const { hello, postgres, error } = this.state 
+
 
     return (
       <div className="App">
         <Router>
       <Switch>
-        <Route path="/login">
-          <LogIn />
+        <Route path="/login" component={LogIn}>
+          {/* <LogIn /> */}
         </Route>
-        <ProtectedRoute path="/dashboard">
-          <Dashboard />
-        </ProtectedRoute>
-        <Route exact path="/">
-          <Redirect exact from="/" to="dashboard" />
+        {/* <ProtectedRoute path="/dashboard/" component={Dashboard}> */}
+          {/* <Dashboard /> */}
+        {/* </ProtectedRoute> */}
+        <Route path="/dashboard/:id" component={Dashboard}>
+          {/* removed exact path  for both top and bottom*/}
+          {/* <Redirect from="/" to="dashboard/" /> */}
         </Route>
         <Route path="*">
-          <Redirect from="/" to="dashboard" />
+          <Redirect from="/" to="dashboard/" />
         </Route>
+         
+
       </Switch>
     </Router>
       </div>

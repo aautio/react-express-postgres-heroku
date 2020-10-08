@@ -1,10 +1,11 @@
 import React, {Component} from "react";
 import { Container, Row, Col } from 'react-grid-system';
-import { Redirect } from "react-router-dom";
+import { Redirect, Route, withRouter } from "react-router-dom";
 import Title from "./Title"
 import "./LogInForm.css"
+import dashboard from "./Layouts/Dashboard"
 
-export default class logInClass extends Component {
+class logInForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -25,6 +26,7 @@ export default class logInClass extends Component {
     });
   };
 
+
   login = event => {
     let user_id = this.state.loginParams.user_id;
     let user_password = this.state.loginParams.user_password;
@@ -38,8 +40,10 @@ export default class logInClass extends Component {
   };
 
   render() {
+    let newRoute= <Route exact path="/login" render={props => ( <Redirect to={`/dashboard/${this.state.loginParams.user_id}`} Component={dashboard}/>)}></Route> 
+  
     if (localStorage.getItem("token")) {
-      return <Redirect to="/" />;
+      return newRoute;
     }
       return (
         <Container className="Form-container">
@@ -76,4 +80,5 @@ export default class logInClass extends Component {
       );
     }
   }
+  export default withRouter(logInForm);
   

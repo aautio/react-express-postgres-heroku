@@ -5,7 +5,7 @@ class IndexDashboard extends Component {
   render() {
     return (
       <Fragment>
-        <Title name="Dashboard page "/>
+        <Title name="Welcome"/>
       </Fragment>
     );
   }
