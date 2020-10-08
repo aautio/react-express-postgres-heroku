@@ -5,6 +5,7 @@ server/node_modules
 
 # testing
 /react-ui/coverage
+/server/coverage
 
 # production
 /react-ui/build
@@ -16,7 +17,8 @@ react-ui/.env.development.local
 react-ui/.env.test.local
 react-ui/.env.production.local
 
-server/.env
+server/config
+server/.jest
 
 # misc
 react-ui/npm-debug.log*

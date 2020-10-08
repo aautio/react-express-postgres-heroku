@@ -10,3 +10,8 @@
     c. handlers: contains all the business logic for a certain behaviour
 
 5. tests: contains all the test code
+
+* Special Notes: 
+1. For naming the migrations, it needs to follow [version].[action].[optional-description].sql. Refer to [Postgrator documentation](https://www.npmjs.com/package/postgrator) for more details.
+2. Do NOT touch past migrations to avoid checksum errors. If corrections need to be made, create a new sql statement.
+3. Use single quotes for strings in the sql statements. 
