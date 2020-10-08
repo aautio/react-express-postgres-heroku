@@ -1,0 +1,33 @@
+
+.Form-container{
+   padding: 50px;
+}
+.Form-container .InputFields{
+  /* width: 100%; */
+  padding: 12px 20px;
+  margin-top:4px;
+  margin-bottom:4px;
+  border:none;
+  background-color: #F2F2F3;
+  box-sizing: border-box;
+  width:250px;
+  height: 22px;
+  padding-top: 3px;
+  padding-bottom:3px;
+  border-radius: 30px;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 15px 0 rgba(0,0,0,0.15);
+}
+.Form-container .SubmitButton{
+    background-color:#FF5454;
+    color:black;
+    border:none;
+    margin-top:4px;
+    text-align: center;
+    display: inline-block;
+    width:250px;
+    height: 22px;
+    padding-top: 3px;
+    padding-bottom:3px;
+    border-radius: 30px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 15px 0 rgba(0,0,0,0.15);
+}

@@ -1,7 +1,15 @@
 import React, { Component } from 'react'
+import LogIn from "./components/Layouts/LogIn"
+import Dashboard from "./components/Layouts/Dashboard"
 import './App.css'
-import Header from "./components/Header"
-import Title from "./components/Title"
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect
+} from "react-router-dom";
+import ProtectedRoute from "./components/Layouts/ProtectedRoute"
+
 
 class App extends Component {
   state = {
@@ -38,11 +46,22 @@ class App extends Component {
 
     return (
       <div className="App">
-        <Title name="I am a Title"/>
-        <Header name = "Title inside banner"/>
-        <p className="App-intro">{hello}</p>
-        <p className="App-intro">{postgres}</p>
-        <p className="App-intro">{error}</p>
+        <Router>
+      <Switch>
+        <Route path="/login">
+          <LogIn />
+        </Route>
+        <ProtectedRoute path="/dashboard">
+          <Dashboard />
+        </ProtectedRoute>
+        <Route exact path="/">
+          <Redirect exact from="/" to="dashboard" />
+        </Route>
+        <Route path="*">
+          <Redirect from="/" to="dashboard" />
+        </Route>
+      </Switch>
+    </Router>
       </div>
     )
   }

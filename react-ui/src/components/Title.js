@@ -5,7 +5,7 @@ export default class Title extends Component {
     render() {
       return (
         <div>   
-            <h1 className="Title-Style">{this.props.name}</h1>
+            <p className="Title-Style">{this.props.name}</p>
         </div>
       );
     }
