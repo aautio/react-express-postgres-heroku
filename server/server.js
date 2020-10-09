@@ -3,7 +3,7 @@ require('dotenv').config()
 const express = require('express')
 const morgan = require('morgan')
 
-const api = require('./api')
+const api = require('./routes')
 
 const app = express()
 
@@ -46,7 +46,7 @@ if (process.env.DYNO) {
 }
 
 /*
- * Hook up all apis defined in /api
+ * Connect all routes in the api.
  */
 app.use(api)
 
@@ -70,10 +70,10 @@ if (process.env.NODE_ENV === 'production') {
  * Migrate database before listening for requests
  */
 const postgrator = require('postgrator')
-const { connectionString } = require('./lib/database')
+const { connectionString } = require('./lib/connection')
 
 postgrator.setConfig({
-  migrationDirectory: __dirname + '/postgrator',
+  migrationDirectory: __dirname + '/migrations',
   driver: 'pg',
   connectionString
 })
