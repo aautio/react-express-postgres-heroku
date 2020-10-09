@@ -8,8 +8,8 @@
   "private": true,
   "description": "ConnectMe provides a quick and confidential method for students to book appointments with their school's service workers",
   "scripts": {
-    "postinstall": "npm --prefix react-ui install && npm --prefix server install",
-    "start:dev": "concurrently 'npm run --prefix react-ui start' 'npm run --prefix server start'",
+    "postinstall": "cd server && npm install && cd .. && cd react-ui && npm install",
+    "start:dev": "start npm run --prefix server start && start npm run --prefix react-ui start",
     "heroku-postbuild": "npm run --prefix react-ui build",
     "start": "cd server && NODE_ENV=production node server.js"
   },
