@@ -1,14 +1,17 @@
 {
-  "name": "api-with-express-and-postgres",
+  "name": "connect-me-backend",
   "version": "1.0.0",
   "private": true,
-  "description": "API backend with Express and Postgres",
+  "description": "Backend for the ConnectMe application.",
   "scripts": {
-    "start": "nodemon server.js"
+    "start": "nodemon server.js",
+    "test": "jest --coverage"
   },
   "dependencies": {
     "dotenv": "^4.0.0",
     "express": "^4.16.2",
+    "lodash": "^4.17.20",
+    "moment": "^2.29.1",
     "morgan": "^1.9.0",
     "pg": "^7.3.0",
     "pg-monitor": "^0.8.3",
@@ -16,6 +19,12 @@
     "postgrator": "^2.10.3"
   },
   "devDependencies": {
+    "jest": "^26.5.2",
     "nodemon": "^1.12.1"
+  },
+  "jest": {
+    "setupFiles": [
+      "<rootDir>/.jest/setEnvVars.js"
+    ]
   }
 }

@@ -1,6 +1,14 @@
 import React, { Component } from 'react'
-import logo from './logo.svg'
+import LogIn from "./components/Layouts/LogIn"
+import Dashboard from "./components/Layouts/Dashboard"
 import './App.css'
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect
+} from "react-router-dom";
+
 
 class App extends Component {
   state = {
@@ -33,18 +41,34 @@ class App extends Component {
       })
   }
   render() {
-    const { hello, postgres, error } = this.state
+    const { hello, postgres, error } = this.state 
+
 
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
+        <Router>
+      <Switch>
+        <Route path="/login" component={LogIn}>
+          {/* <LogIn /> */}
+        </Route>
+        {/* <ProtectedRoute path="/dashboard/" component={Dashboard}> */}
+          {/* <Dashboard /> */}
+        {/* </ProtectedRoute> */}
+        <Route exact path="/dashboard/:id" component={Dashboard}>
+          {/* removed exact path  for both top and bottom*/}
+          {/* <Redirect from="/" to="dashboard/" /> */}
+        </Route>
+        <Route path="/dashboard/" component={Dashboard}>
+          {/* removed exact path  for both top and bottom*/}
+          {/* <Redirect from="/" to="dashboard/" /> */}
+        </Route>
+        <Route path="*">
+          <Redirect from="/" to="dashboard/" />
+        </Route>
+         
 
-        <p className="App-intro">{hello}</p>
-        <p className="App-intro">{postgres}</p>
-        <p className="App-intro">{error}</p>
+      </Switch>
+    </Router>
       </div>
     )
   }
